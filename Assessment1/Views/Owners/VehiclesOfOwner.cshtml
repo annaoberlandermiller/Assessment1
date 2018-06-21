@@ -4,7 +4,7 @@
     ViewBag.Title = "VehiclesOfOwner";
 }
 
-<h2>Vehicles Of Owner</h2>
+<h2>Vehicles owned by @Model.Owner.Name</h2>
 
 @foreach (var vehicle in Model.Vehicles) {
 <p>
