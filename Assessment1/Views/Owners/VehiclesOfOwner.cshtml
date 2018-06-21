@@ -1,0 +1,21 @@
+﻿@model Assessment1.ViewModels.VehiclesOfOwner
+
+@{
+    ViewBag.Title = "VehiclesOfOwner";
+}
+
+<h2>Vehicles Of Owner</h2>
+
+@foreach (var vehicle in Model.Vehicles) {
+<p>
+    <span>@vehicle.Vin</span>
+    <br>
+    <span>@vehicle.Make</span>
+    <br>
+    <span>@vehicle.Model</span>
+    <br>
+    <span>@vehicle.Year</span>
+    <br>
+</p>
+}
+

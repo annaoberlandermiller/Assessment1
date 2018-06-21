@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -149,10 +155,37 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OwnersController.cs" />
+    <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806211334208_added Owner model.cs" />
+    <Compile Include="Migrations\201806211334208_added Owner model.Designer.cs">
+      <DependentUpon>201806211334208_added Owner model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806211341041_added Vehicle.cs" />
+    <Compile Include="Migrations\201806211341041_added Vehicle.Designer.cs">
+      <DependentUpon>201806211341041_added Vehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806211345076_added controller.cs" />
+    <Compile Include="Migrations\201806211345076_added controller.Designer.cs">
+      <DependentUpon>201806211345076_added controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806211348483_adding vin to vehicle model.cs" />
+    <Compile Include="Migrations\201806211348483_adding vin to vehicle model.Designer.cs">
+      <DependentUpon>201806211348483_adding vin to vehicle model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806211352004_adding back vehicle controller.cs" />
+    <Compile Include="Migrations\201806211352004_adding back vehicle controller.Designer.cs">
+      <DependentUpon>201806211352004_adding back vehicle controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Assessment1Context.cs" />
+    <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\VehiclesOfOwner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -193,10 +226,20 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Owners\Create.cshtml" />
+    <Content Include="Views\Owners\Delete.cshtml" />
+    <Content Include="Views\Owners\Details.cshtml" />
+    <Content Include="Views\Owners\Edit.cshtml" />
+    <Content Include="Views\Owners\Index.cshtml" />
+    <Content Include="Views\Vehicles\Create.cshtml" />
+    <Content Include="Views\Vehicles\Delete.cshtml" />
+    <Content Include="Views\Vehicles\Details.cshtml" />
+    <Content Include="Views\Vehicles\Edit.cshtml" />
+    <Content Include="Views\Vehicles\Index.cshtml" />
+    <Content Include="Views\Owners\VehiclesOfOwner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -210,6 +253,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806211334208_added Owner model.resx">
+      <DependentUpon>201806211334208_added Owner model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806211341041_added Vehicle.resx">
+      <DependentUpon>201806211341041_added Vehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806211345076_added controller.resx">
+      <DependentUpon>201806211345076_added controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806211348483_adding vin to vehicle model.resx">
+      <DependentUpon>201806211348483_adding vin to vehicle model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806211352004_adding back vehicle controller.resx">
+      <DependentUpon>201806211352004_adding back vehicle controller.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
