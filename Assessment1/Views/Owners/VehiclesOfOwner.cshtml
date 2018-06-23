@@ -6,6 +6,8 @@
 
 <h2>Vehicles owned by @Model.Owner.Name</h2>
 
+// GD: For the vehicles display, it would have been better to 
+//      use HTML tags similar to what was in the Vehicle.Index page
 @foreach (var vehicle in Model.Vehicles) {
 <p>
     <span>@vehicle.Vin</span>
